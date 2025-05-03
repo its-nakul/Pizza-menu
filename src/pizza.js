@@ -1,13 +1,13 @@
 import React from "react";
 
-const Pizza = ({ image, name, ingredient, price }) => {
+const Pizza = ({ image, name, ingredient, price, soldOut }) => {
   return (
-    <div className="pizza">
+    <div className={`pizza ${soldOut ? "sold-out" : ""}`}>
       <img src={image} />
       <div>
         <h3>{name}</h3>
         <p>{ingredient}</p>
-        <span>{price + 5}</span>
+        <span>{soldOut ? "SOLD OUT" : price + 5}</span>
       </div>
     </div>
   );

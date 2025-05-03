@@ -46,24 +46,30 @@ const pizzaData = [
   },
 ];
 
-const menu = () => {
+const Menu = () => {
+  // const pizza = pizzaData?.map((x) => x?.name);
+  const pizza = pizzaData;
+  const numPizza = pizza?.length;
   return (
-    <div className="menu">
+    <main className="menu">
       <h2>Our Menu</h2>
       <div>
-        {pizzaData?.map((item) => {
-          return (
-            <Pizza
-              image={item?.photoName}
-              name={item?.name}
-              ingredient={item?.ingredients}
-              price={item?.price}
-            />
-          );
-        })}
+        {numPizza > 0 ? (
+          <ul className="pizzas">
+            {pizzaData?.map((item) => (
+              <Pizza
+                image={item?.photoName}
+                name={item?.name}
+                ingredient={item?.ingredients}
+                price={item?.price}
+                soldOut={item?.soldOut}
+              />
+            ))}
+          </ul>
+        ) : null}
       </div>
-    </div>
+    </main>
   );
 };
 
-export default menu;
+export default Menu;

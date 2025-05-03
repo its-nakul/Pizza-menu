@@ -1,11 +1,20 @@
 import React from "react";
 
-const footer = () => {
+const Footer = () => {
+  const hours = new Date().getHours();
+  const open = 12;
+  const close = 24;
+  const isOpen = hours >= open && hours <= close;
   return (
     <footer className="footer">
-      {new Date().toLocaleTimeString()}. We're currently open
+      {isOpen && (
+        <div className="order">
+          <p>We're open until {close}:00. Come visit us or order online.</p>
+          <button className="btn">Order</button>
+        </div>
+      )}
     </footer>
   );
 };
 
-export default footer;
+export default Footer;
