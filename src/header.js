@@ -1,6 +1,6 @@
 import React from "react";
 
-const header = () => {
+const Header = () => {
   //   const style = { color: "red", fontSize: "48px", textTransform: "upperCase" };
   const style = {};
   return (
@@ -10,4 +10,4 @@ const header = () => {
   );
 };
 
-export default header;
+export default Header;
